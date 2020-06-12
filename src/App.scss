@@ -1,0 +1,16 @@
+body {
+  background: #f9f9f9;
+  color: #526c87;
+  margin: 0 10px;
+}
+
+@media (min-width: 960px) {
+  body {
+    margin: 0 20px;
+  }
+}
+
+@import 'src/components/Header/Header.scss';
+@import 'src/components/BookList/BookList.scss';
+@import 'src/components/BookItem/BookItem.scss';
+@import 'src/components/Search/Search.scss';

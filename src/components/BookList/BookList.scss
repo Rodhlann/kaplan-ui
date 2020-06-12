@@ -1,0 +1,19 @@
+.book-list__container {
+  margin-top: 30px;
+}
+
+.book-list__header {
+  font-size: 20px;
+}
+
+.book-list__items {
+  margin-top: 30px;
+}
+
+@media (min-width: 960px) {
+  .book-list__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

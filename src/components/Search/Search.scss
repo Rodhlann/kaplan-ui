@@ -1,0 +1,27 @@
+.search--input__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid darkgray;
+  width: 50%;
+}
+
+.search__icon {
+  position: absolute;
+  width: 18px;
+  padding: 0 8px;
+}
+
+.search--input {
+  height: 30px;
+  border: none;
+  width: 100%;
+  padding-left: 35px;
+  background-color: transparent;
+}
+
+@media (max-width: 960px) {
+  .search--input__container {
+    width: 100%;
+  }
+}

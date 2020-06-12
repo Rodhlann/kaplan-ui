@@ -1,0 +1,41 @@
+.book-item__container {
+  background: white;
+  width: auto;
+  padding: 13px 20px;
+  margin: 15px 0px;
+  border-left: 5px solid orange;
+  border-radius: 3px;
+  box-shadow: 0px 2px 2px darkgrey;
+}
+
+.book-item__header {
+  margin: 0;
+  font-size: 16px;
+}
+
+.book-item__line-item {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.book-item__line-item:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 960px) {
+  .book-item__container {
+    width: 44%;
+  }
+}
+
+@media (min-width: 1080px) {
+  .book-item__container {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .book-item__container {
+    width: 46%;
+  }
+}
