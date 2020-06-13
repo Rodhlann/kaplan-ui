@@ -1,5 +1,6 @@
 import React from 'react';
-import { BookItem, BookResult } from '../BookItem/BookItem';
+import { BookItem } from '../BookItem/BookItem';
+import { BookResult } from "../../shared/types";
 
 export const BookList: React.FC<{ loading: boolean; books: BookResult[] }> = ({ loading, books }) => {
     return <div className='book-list__container'>

@@ -6,11 +6,13 @@ body {
 
 @media (min-width: 960px) {
   body {
-    margin: 0 20px;
+    margin: 0 30px;
   }
 }
 
 @import 'src/components/Header/Header.scss';
 @import 'src/components/BookList/BookList.scss';
 @import 'src/components/BookItem/BookItem.scss';
-@import 'src/components/Search/Search.scss';
+@import 'src/components/TextInput/TextInput.scss';
+@import 'src/components/AddBookForm/AddBookForm.scss';
+@import 'src/components/Button/Button.scss';

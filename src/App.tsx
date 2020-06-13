@@ -1,41 +1,32 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './App.scss';
-import { Header } from "./components/Header/Header";
-import { BookResult } from "./components/BookItem/BookItem";
-import { Search } from "./components/Search/Search";
-
-export type BookListResult = {
-    items: BookResult[];
-};
+import { Header } from './components/Header/Header';
+import { Search } from './components/Search/Search';
+import { useBookService } from './hooks/useBookService';
+import { AddBookForm } from './components/AddBookForm/AddBookForm';
 
 const App = () => {
-    const [hasError, setError] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isAddingBook, setIsAddingBook] = useState(false);
-    const [bookListResult, setBookListResult] = useState<BookListResult>();
-
-    useEffect(() => {
-        setIsLoading(true);
-        fetch('https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep')
-            .then((res) => res.json())
-            .then((data) => setBookListResult(data as BookListResult))
-            .then(() => setIsLoading(false))
-            .catch((error) => setError(!!error));
-    }, [hasError]);
+    const { loading, error, bookListResult, setIsAddingBook, isAddingBook, addNewBook } = useBookService();
 
     return (
-        <div className="App">
-            { !isAddingBook ? (
-                <>
-                    <Header setIsAddingBook={setIsAddingBook} />
-                    <Search loading={isLoading} data={bookListResult?.items}/>
-                </>
+        <>
+            {!error ? (
+                <div className="app__container">
+                    {!isAddingBook ? (
+                        <>
+                            <Header setIsAddingBook={setIsAddingBook}/>
+                            <Search loading={loading} data={bookListResult?.items}/>
+                        </>
+                    ) : (
+                        <AddBookForm setIsAddingBook={setIsAddingBook} addNewBook={addNewBook} />
+                    )}
+                </div>
             ) : (
-                <>
-                    {/*<AddBookForm />*/}
-                </>
+                <div className='error__container'>
+                    Something went wrong!
+                </div>
             )}
-        </div>
+        </>
     );
 };
 

@@ -1,0 +1,25 @@
+.button--button {
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  border-style: none;
+  cursor: pointer;
+}
+
+.button__primary {
+  color: white;
+  background-color: #2751BF;
+}
+
+.button__secondary {
+  background-color: transparent;
+  color: #2751BF;
+  border: 1px solid #2751BF;
+}
+
+.button--button:disabled {
+  background-color: transparent;
+  border: 1px solid darkgray;
+  color: darkgray;
+  cursor: default;
+}
