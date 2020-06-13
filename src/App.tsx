@@ -4,6 +4,7 @@ import { Header } from './components/Header/Header';
 import { Search } from './components/Search/Search';
 import { useBookService } from './hooks/useBookService';
 import { AddBookForm } from './components/AddBookForm/AddBookForm';
+import { Error } from './components/Error/Error';
 
 const App = () => {
     const { loading, error, bookListResult, setIsAddingBook, isAddingBook, addNewBook } = useBookService();
@@ -11,7 +12,7 @@ const App = () => {
     return (
         <>
             {!error ? (
-                <div className="app__container">
+                <div className='app__container'>
                     {!isAddingBook ? (
                         <>
                             <Header setIsAddingBook={setIsAddingBook}/>
@@ -22,9 +23,7 @@ const App = () => {
                     )}
                 </div>
             ) : (
-                <div className='error__container'>
-                    Something went wrong!
-                </div>
+                <Error />
             )}
         </>
     );

@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 import { BookResultVolumeInfo, BookResult, BookListResult } from '../shared/types';
 
 export const useBookService = () => {
-    const [hasError, setError] = useState(false);
+    const [hasError, setError] = useState();
     const [isLoading, setIsLoading] = useState(false);
     const [isAddingBook, setIsAddingBook] = useState(false);
     const [bookListResult, setBookListResult] = useState<BookListResult>();
@@ -13,9 +13,12 @@ export const useBookService = () => {
         fetch('https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep')
             .then((res) => res.json())
             .then((data) => setBookListResult(data as BookListResult))
-            .then(() => setIsLoading(false))
-            .catch((error) => setError(!!error));
-    }, [hasError]);
+            .catch((error) => {
+                console.error(error);
+                setError(error)
+            })
+            .finally(() => setIsLoading(false));
+    }, []);
 
     const addNewBook = (book: BookResultVolumeInfo): void => {
         const bookResult: BookResult = {

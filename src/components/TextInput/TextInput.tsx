@@ -1,9 +1,9 @@
-import React, {AriaAttributes, InputHTMLAttributes} from 'react';
+import React, { AriaAttributes, InputHTMLAttributes } from 'react';
 
 export type TextInputProps = {
     className?: string;
     placeholder?: string;
-    kind: 'text' | 'search'
+    kind?: 'text' | 'search'
 };
 
 export const TextInput: React.FC<TextInputProps & InputHTMLAttributes<any> & AriaAttributes> = ({
@@ -21,6 +21,7 @@ export const TextInput: React.FC<TextInputProps & InputHTMLAttributes<any> & Ari
                 className='text-input__icon--search'
                 alt='magnifying glass'
                 src='https://image.flaticon.com/icons/svg/565/565590.svg'
+                data-testid='text-input--search--icon'
             />
         }
         <input
@@ -30,6 +31,7 @@ export const TextInput: React.FC<TextInputProps & InputHTMLAttributes<any> & Ari
             name={name}
             type='text'
             placeholder={placeholder}
+            data-testid='text-input--input'
             {...rest}
         />
     </div>;

@@ -1,0 +1,20 @@
+.error__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  color: black;
+}
+
+.error__icon {
+  width: 50px;
+}
+
+.error__header {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.error__paragraph {
+  text-align: center;
+}

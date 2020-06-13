@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { BookList } from "../BookList/BookList";
-import { TextInput } from "../TextInput/TextInput";
+import { BookList } from '../BookList/BookList';
+import { TextInput } from '../TextInput/TextInput';
 import { BookResult } from '../../shared/types';
 
 export const Search: React.FC<{loading: boolean, data?: BookResult[]}> = ({

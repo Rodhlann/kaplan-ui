@@ -10,6 +10,6 @@ export type BookResult = {
 export type BookResultVolumeInfo = {
     title: string;
     authors: string[];
-    publisher: string;
+    publisher?: string;
     publishedDate: string;
 };

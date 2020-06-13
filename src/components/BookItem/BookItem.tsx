@@ -7,7 +7,7 @@ export const BookItem: React.FC<BookResultVolumeInfo> = ({
     publisher,
     publishedDate
 }) => {
-    return <div className='book-item__container'>
+    return <div className='book-item__container' data-testid='book-item'>
         <h4 className='book-item__header'>{title}</h4>
         <div className='book-item__line-item'>Authors: {authors.join(', ')}</div>
         { publisher &&
